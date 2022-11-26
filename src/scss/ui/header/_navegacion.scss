@@ -5,13 +5,14 @@
 .navegacion{
 
   background-color: v.$primario;
-  padding: .3rem;
-  margin: 2rem 0;
+  padding: .3rem;  //ojooo padding del contenedor al border para que el border quede casi pegado al tope del contenedor 
+  margin: 2rem 0;  //margen entre la navegacion y el header 
 
   &__border{
-    
-      border-block:2px dashed v.$blanco; ;
-      padding: 1.7rem;
+      /*border-top: 2px dashed v.$blanco;    solamente borde arriba y abajo y para ello el border block sirve para ahorrar codigo ya que pone los bordes solamente arriba y abajo y el border inline es para solamente los lados 
+      border-bottom: 2px dashed v.$blanco; */
+      border-block:2px dashed v.$blanco; 
+      padding: 1.7rem;  //el padding de la linea hacia abajo para que quede el borde pegado arriba y el espacio de la navegacion hacia abajo se le da el padding a border
     
   }
 

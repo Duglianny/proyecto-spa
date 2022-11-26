@@ -5,12 +5,12 @@
 .header{
   padding-top:5rem ;
 
-  &__grid{
+  &__grid{  //en mobile para que el logo y el menu de red socil salga abajo del otro
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @include m.tablet{
+    @include m.tablet{ //en tablet salga el menu en una esquina y el logo en otra 
       flex-direction: row;
       justify-content: space-between;
     }
