@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.bienvenida{
+  text-align: center;
+
+  &__heading{
+    @include m.headingcursiva //mixin creado en mixins y aplicado 
+
+  }
+
+  &__texto{
+    font-size: 2.6rem;
+    color: v.$gris;
+    max-width: 50rem;  //con este maximo de ancho se colocara en dos lineas 
+    line-height: 1.8;
+    margin: 4rem auto 0 auto; //para centrar el cotrenido ya que el maxwidth lo pondra del lado izquierdo los 4rem arriba es para separarlos del heading 
+
+  }
+}
