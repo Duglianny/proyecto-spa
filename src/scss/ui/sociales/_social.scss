@@ -3,11 +3,11 @@
 
 .sociales{
   margin: 5rem 0;
-
+  display: flex;
 
   @include m.tablet{
     margin: 0;
-    display: flex;
+    
   }
 
     &__enlace{
