@@ -30,7 +30,7 @@
   }
 
   &__mask{
-    overflow: hidden;
+    overflow: hidden;  //para que se vea bien y no se salga la imagen se creo una clase llamada mask donde se metio cada imagen con el overflow hidden cuando la imagen crezca al hacer hover no se saldra pero se recortara lo que sobresalga del contenedor haciendo parecer que se esta acercando la imagen 
   }
 
   &__imagen{
@@ -38,7 +38,7 @@
     transition: transform .3s;
 
     &:hover{
-      transform: scale(1.2);
+      transform: scale(1.2);  //al hacer hover la imagen crecera y se saldra de su contendor 
     }
   }
 
