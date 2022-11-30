@@ -26,7 +26,7 @@
   }
 
   &__contenido{
-    padding: 5rem 0;
+    padding: 5rem 0;  //para que sea mas grande el contenido hacia adentro 
   }
 
   &__heading{
@@ -41,28 +41,28 @@
 }
 
 .tabla{
-  width: 100%;
+  width: 100%;  //para que todo el contenido de la tabla agarre el 100% de su contenedor 
   border: .5rem solid v.$secundario;
-  text-align: center;
-  border-collapse: collapse;
+  text-align: center;  //para centrar la tabla en el medio de su contenedor 
+  border-collapse: collapse;  //con esta propiedad se eliminan los bordes que se colocan de tabla por default al colocar el background 
 
   &__thead{
     background-color: v.$secundario;
   }
 
-  &__th{
+  &__th{   //se aplica en th y no en thead por que no lo agarra el selector 
     padding: 2rem;
   }
 
   &__tr{
 
     &:hover{
-      background-color: darken(v.$primario, 10%);
+      background-color: darken(v.$primario, 10%);  //para el color oscuro de cada fila se aplica en el tr 
     }
   }
 
   &__td{
-    padding: 1rem;
+    padding: 1rem; //para separara cada fila 1 rem de padiing 
     font-size: 2.2rem;
   }
 }
