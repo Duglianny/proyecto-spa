@@ -1,0 +1,57 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.cards{   //en mobile las imagenen salen una abajo de la otra 
+
+  
+  &__grid{
+    @include m.tablet{
+    @include m.grid(3, 2rem);  //en tablet en 3 columnas 
+    }
+  }
+}
+
+.card{
+
+  max-width: 35rem;  //en mobile se coloca un maxino de ancho a las imagenes para que se puedsn centrar y solo tomen una parte de su tamano 
+  margin: 0 auto 4rem auto;  //para centarr las imagenes en mobile con 4 de separacion hacia abajo entre cada una de ellas 
+
+  &:last-of-type{
+    margin-bottom: 0;  //e; ultimo se le quita 
+  }
+
+  @include m.tablet{
+    max-width: unset;  //para tablet se reinicia ese maxwidth que se coloco en mobile para que se esta manera agarre todo el ancho 
+    margin: 0;  //se reinicia tambien en margin en tablet 
+  }
+
+  &__imagen{
+    width: 100%;  //para que agarre el 100% de tamano de su contenedor 
+    border: .5rem solid v.$blanco;
+    transition: transform .3s;
+
+    &:hover{
+      transform: rotate(4deg) scale(1.3);
+    }
+  }
+
+  &__contenido{
+    background-color: v.$blanco;
+    width: 90%;  //para que ese contendor pequeno del contenido sea un poco mas pequeno que el de la imagen 
+    margin: 0 auto;  //para centrar horizontalmente y el contenido quede en el medio 
+    margin-top: -5rem; //para que se encime el contenido 5 rem arriba de imagen 
+    position: relative; //para que ese fondo blanco se coloque por encima de la imagen 
+  }
+
+  &__heading{
+    @include m.headingcursiva;
+    font-size: 3.4rem;
+    padding: 2rem;
+  }
+
+  &__enlace{
+    @include m.boton(v.$secundario, v.$blanco);
+    display: block;
+  }
+}

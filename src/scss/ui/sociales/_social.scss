@@ -1,0 +1,62 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sociales{
+  margin: 5rem 0;  //para mobile para separar el coail del logo y del nav 
+  display: flex;  //para que  quede todo de lado ya que en accesible se puso un display block que le cambiara la direccion 
+
+  @include m.tablet{
+    margin: 0;
+    
+  }
+
+    &__enlace{
+
+
+      &::before{
+        content: '';
+        padding: 2rem;  //para crear un cuadrado donde ira la imagen antes del enlace 
+        display: inline-block;  //para que se un cuadrado perfecto de 40px se coloca inline-block si no quedara un cuadrado imperfecto 
+      }
+
+      &[href*="facebook.com"]::before{    //con el selector de atributos seleecionamos cada uno para colocarle sus debidas imagen de logos de cada red con el & lo unico al enlace con el href*= indicamos que en algun sitio del enlace esta lo que se encuantre entre "" en este caso facebook.com y el before para que lo coloque antes de ese enlace     
+
+        //el href^= .  es para todo lo que empiece en lo que se coloca en la comilla 
+
+        //y el href$= es para seleccionar todo atributo que termine en lo que se coloque en la comilla 
+        background-image: url(../img/icono_facebook.svg);
+      }
+
+      &[href*="twitter.com"]::before{
+        background-image: url(../img/icono_twitter.svg);
+      }
+
+      &[href*="istagram.com"]::before{
+        background-image: url(../img/icono_instagram.svg);
+      }
+
+      &[href*="pinterets.com"]::before{
+        background-image: url(../img/icono_pinterest.svg);
+      }
+
+      &[href*="youtube.com"]::before{
+        background-image: url(../img/icono_youtube.svg);
+      }
+
+      &[href*="tiktok.com"]::before{
+        background-image: url(../img/icono_tiktok.svg);
+      }
+    }
+
+    &__accesible{    //no se le puede colocar un display none por que pierde la accesibilidad para las personas discapasitada para ellos solamente se oculta el contenido mas no se quita 
+      width: 1px;  //con un ancho y alto minimo 
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip:rect(0, 0, 0, 0);
+      border: 0;
+      display: block;
+    }
+
+}

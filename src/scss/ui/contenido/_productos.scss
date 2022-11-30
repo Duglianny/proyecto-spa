@@ -1,0 +1,63 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.productos{
+
+  &__heading{
+
+    @include m.headingcursiva;
+    margin-bottom: 5rem;
+  }
+
+  &__grid{
+    @include m.grid(1, 2rem);
+
+    @include m.tablet{
+      @include m.grid(2, 2rem);
+    }
+  
+    @include m.desktop{
+      @include m.grid(4, 2rem);
+    }
+  }
+}
+
+.producto{
+
+  &__contenido{
+    background-color: v.$blanco;
+    padding: 2rem;
+  }
+
+  &__mask{
+    overflow: hidden;  //para que se vea bien y no se salga la imagen se creo una clase llamada mask donde se metio cada imagen con el overflow hidden cuando la imagen crezca al hacer hover no se saldra pero se recortara lo que sobresalga del contenedor haciendo parecer que se esta acercando la imagen 
+  }
+
+  &__imagen{
+    width: 100%;
+    transition: transform .3s;
+
+    &:hover{
+      transform: scale(1.2);  //al hacer hover la imagen crecera y se saldra de su contendor 
+    }
+  }
+
+  &__nombre{
+    @include m.heading;
+    font-size: 2.4rem;
+    color: v.$secundario;
+  }
+
+  &__descripcion{
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
+
+  &__precio{
+    text-align: center;
+    color: v.$gris;
+    font-size: 2.8rem;
+    margin: 0;
+  }
+}
