@@ -68,3 +68,12 @@
     }
     
 }
+
+
+@mixin heading {
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 4rem;
+    
+}
